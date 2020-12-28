@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class College {
     private String name;
-    private ArrayList<Lecture> collegeLectures;
+    private List<Lecture> collegeLectures = new ArrayList<>();
 
     public College(String name) {
         this.name = name;
@@ -17,7 +18,7 @@ public class College {
         this.name = name;
     }
 
-    public ArrayList<Lecture> getCollegeLectures() {
+    public List<Lecture> getCollegeLectures() {
         return collegeLectures;
     }
 

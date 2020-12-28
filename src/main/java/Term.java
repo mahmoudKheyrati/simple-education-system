@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class Term {
     private Semester semester;
-    private HashMap<Lecture,Double> lectures;
+    private HashMap<Lecture,Double> lectures = new HashMap<>();
 
     public Semester getSemester() {
         return semester;

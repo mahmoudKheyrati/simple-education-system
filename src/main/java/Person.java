@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Person {
     String name;
-    ArrayList<College> relatedColleges;
-    ArrayList<String> jobTitles;
+    List<College> relatedColleges;
+    List<String> jobTitles;
     String lastJobTitle;
 
-    public Person(String name, ArrayList<College> relatedColleges, ArrayList<String> jobTitles) {
+    public Person(String name, List<College> relatedColleges, List<String> jobTitles) {
         if (jobTitles.isEmpty()){
             throw new IllegalArgumentException(
                     "we can't have person without jobTitle\n" +
@@ -26,11 +27,11 @@ public abstract class Person {
         return name;
     }
 
-    public ArrayList<College> getRelatedColleges() {
+    public List<College> getRelatedColleges() {
         return relatedColleges;
     }
 
-    public ArrayList<String> getJobTitles() {
+    public List<String> getJobTitles() {
         return jobTitles;
     }
 

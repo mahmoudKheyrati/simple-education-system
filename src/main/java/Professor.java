@@ -1,16 +1,17 @@
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Professor extends Person {
     ArrayList<Term> terms = new ArrayList<>();
 
-    public Professor(String name, ArrayList<College> relatedColleges, ArrayList<String> jobTitles) {
+    public Professor(String name, List<College> relatedColleges, List<String> jobTitles) {
         super(name, relatedColleges, jobTitles);
     }
 
-    public ArrayList<Lecture> getCollegeLectures(College college) throws IllegalAccessException {
+    public List<Lecture> getCollegeLectures(College college) throws IllegalAccessException {
         if (!relatedColleges.contains(college)) {
             throw new IllegalAccessException("you are not a member of this college. so you can't get it's lectures.");
         }
