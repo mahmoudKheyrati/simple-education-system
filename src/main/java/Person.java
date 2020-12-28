@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Person {
-    String name;
-    List<College> relatedColleges;
-    List<String> jobTitles;
-    String lastJobTitle;
+    private String name;
+    protected List<College> relatedColleges;
+    protected List<String> jobTitles;
+    private String lastJobTitle;
 
     public Person(String name, List<College> relatedColleges, List<String> jobTitles) {
         if (jobTitles.isEmpty()){

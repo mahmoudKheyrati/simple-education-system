@@ -10,7 +10,6 @@ public class Application {
         College computerCollege = new College("Computer computerCollege");
         Professor taheri = new Professor("taheri", List.of(computerCollege), List.of("associated professor"));
 
-
         Lecture advancedProgramming = new Lecture("Advanced Programming ", 3, computerCollege, Set.of(taheri));
 
         computerCollege.addLecture(advancedProgramming);
