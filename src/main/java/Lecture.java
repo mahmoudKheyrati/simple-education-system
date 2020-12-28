@@ -1,12 +1,14 @@
 import java.util.Objects;
 
 public class Lecture {
-    String name;
-    int unit;
+    private String name;
+    private int unit;
+    private College college;
 
-    public Lecture(String name, int unit) {
+    public Lecture(String name, int unit, College college) {
         this.name = name;
         this.unit = unit;
+        this.college = college;
     }
 
     public String getName() {
@@ -25,5 +27,11 @@ public class Lecture {
         this.unit = unit;
     }
 
+    public College getCollege() {
+        return college;
+    }
 
+    public void setCollege(College college) {
+        this.college = college;
+    }
 }

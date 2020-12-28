@@ -1,9 +1,9 @@
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 class Student extends Person{
+    ArrayList<Term> terms = new ArrayList<>();
 
     public Student(String name, ArrayList<College> relatedColleges, ArrayList<String> jobTitles) {
         super(name, relatedColleges, jobTitles);
