@@ -16,8 +16,21 @@ class Student extends Person{
         return college.getCollegeLectures();
     }
 
-    public boolean takeLecture(College college, Lecture lecture) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("not implemented yet!");
+    public boolean takeLecture(Term term, College college, Lecture lecture) throws ExecutionControl.NotImplementedException, IllegalAccessException {
+        if (!relatedColleges.contains(college)) {
+            throw new IllegalAccessException("you are not a member of this college");
+        }
+        int index = relatedColleges.indexOf(college);
+        if (!relatedColleges.get(index).getCollegeLectures().contains(lecture)) {
+            throw new IllegalAccessError("this college don't have this lecture");
+        }
+
+        int termIndex = terms.indexOf(term);
+        if (termIndex<0) {
+            throw new IllegalAccessException("this term doses'nt exits! ");
+        }
+
+        return terms.get(termIndex).addLecture(lecture);
     }
 
 }

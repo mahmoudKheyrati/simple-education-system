@@ -18,8 +18,10 @@ public class Term {
         return lectures;
     }
 
-    public void setLectures(HashMap<Lecture, Double> lectures) {
-        this.lectures = lectures;
+
+    public boolean addLecture(Lecture lecture) {
+        lectures.put(lecture, 0.0);
+        return true;
     }
 
     public double getTermAverage(){
