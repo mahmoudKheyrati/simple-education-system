@@ -24,15 +24,6 @@ public class Term {
         return true;
     }
 
-    public double getTermAverage(){
-        AtomicReference<Double> sumOfScores = new AtomicReference<>(0.0D);
-        lectures.forEach((lecture, score) ->{
-            sumOfScores.updateAndGet(v -> v + lecture.getUnit() * score);
-        });
-
-        return sumOfScores.get()/getTotalUnit();
-    }
-
     public int getTotalUnit(){
         AtomicInteger units = new AtomicInteger();
         lectures.forEach((lecture, score) -> units.addAndGet(lecture.getUnit()));

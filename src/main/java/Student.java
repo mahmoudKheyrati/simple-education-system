@@ -1,6 +1,8 @@
 import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 class Student extends Person{
     ArrayList<Term> terms = new ArrayList<>();
@@ -31,6 +33,19 @@ class Student extends Person{
         }
 
         return terms.get(termIndex).addLecture(lecture);
+    }
+
+    public double getTermAverage(Term term) throws IllegalAccessException {
+        if (!terms.contains(term)){
+            throw new IllegalAccessException("you don't have this term");
+        }
+        var lectures = terms.stream().filter(term1 -> term1 == term).collect(Collectors.toList()).get(0).getLectures();
+        AtomicReference<Double> sumOfScores = new AtomicReference<>(0.0D);
+        lectures.forEach((lecture, score) ->{
+            sumOfScores.updateAndGet(v -> v + lecture.getUnit() * score);
+        });
+
+        return sumOfScores.get()/term.getTotalUnit();
     }
 
 }

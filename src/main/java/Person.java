@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Person {
+public abstract class Person {
     String name;
     ArrayList<College> relatedColleges;
     ArrayList<String> jobTitles;
