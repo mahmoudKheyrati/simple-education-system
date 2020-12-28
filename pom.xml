@@ -12,12 +12,12 @@
                <version>3.8.1</version>
                <configuration>
                    <!-- 1.10, 11, 12, 13-->
-                   <release>15.0.1</release>
+                   <release>14</release>
                    <compilerArgs>
-                       <arg>--enable-preview</arg>
+<!--                       <arg>&#45;&#45;enable-preview</arg>-->
                    </compilerArgs>
-                   <source>15</source>
-                   <target>15</target>
+                   <source>14</source>
+                   <target>14</target>
                </configuration>
            </plugin>
        </plugins>

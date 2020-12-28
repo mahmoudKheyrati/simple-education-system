@@ -1,3 +1,3 @@
-record Student(){
+class Student{
 
 }
