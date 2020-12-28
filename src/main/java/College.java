@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
 public class College {
-    String name;
+    private String name;
+    private ArrayList<Lecture> collegeLectures;
 
     public College(String name) {
         this.name = name;
@@ -11,5 +15,26 @@ public class College {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ArrayList<Lecture> getCollegeLectures() {
+        return collegeLectures;
+    }
+
+    public boolean addLecture(Lecture lecture){
+        return collegeLectures.add(lecture);
+    }
+    public boolean removeLecture(Lecture lecture){
+        return collegeLectures.remove(lecture);
+    }
+
+    public boolean changeUnitOfLecture(Lecture lecture, int newUnit) {
+        int index = collegeLectures.indexOf(lecture);
+        if (index < 0 ) throw new NoSuchElementException("this college don't have this lecture");
+
+        lecture.setUnit(newUnit);
+        collegeLectures.remove(index);
+        collegeLectures.add(index, lecture);
+        return collegeLectures.get(collegeLectures.size() - 1) == lecture;
     }
 }
