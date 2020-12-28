@@ -48,4 +48,7 @@ class Student extends Person{
         return sumOfScores.get()/term.getTotalUnit();
     }
 
+    public ArrayList<Term> getTerms() {
+        return terms;
+    }
 }
