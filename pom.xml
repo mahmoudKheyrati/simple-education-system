@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <version>3.8.1</version>
+               <configuration>
+                   <!-- 1.10, 11, 12, 13-->
+                   <release>15.0.1</release>
+                   <compilerArgs>
+                       <arg>--enable-preview</arg>
+                   </compilerArgs>
+                   <source>15</source>
+                   <target>15</target>
+               </configuration>
+           </plugin>
+       </plugins>
+   </build>
+    <groupId>org.example</groupId>
+    <artifactId>mini-sess</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+</project>
